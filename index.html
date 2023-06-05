@@ -8,7 +8,7 @@
 	<meta name="description" content="Godot provides a huge set of common tools, so you can just focus on making your game without reinventing the wheel.">
 	<meta name="theme-color" content="#3d8fcc">
 	<meta property="og:site_name" content="Godot Engine">
-	<meta property="og:url" content="https://godotengine.org">
+	<meta property="og:url" content="https://godotengine.org/">
 	<meta name="twitter:site" content="@godotengine">
 
 	<meta property="og:title" content="Godot Engine - Free and open source 2D and 3D game engine">
@@ -21,7 +21,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css?106">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -38,15 +38,15 @@
 				<img class="nav-logo dark-logo" src="/assets/logo_dark.svg" width="136" height="48" alt="Godot Engine">
 			</a>
 			<label for="nav_toggle_cb" id="nav_toggle_btn">
-				<img src="/assets/hamburger.svg" width="24" height="24" alt="">
+				<img src="/assets/icons/hamburger.svg" width="24" height="24" alt="Main menu">
 			</label>
 		</div>
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/showcase">Showcase</a></li>
+				<li><a href="/features">Features</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/features">Features</a></li>
+					<li><a href="/showcase">Showcase</a></li>
 				</div>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/community">Community</a></li>
@@ -68,9 +68,42 @@
 <main>
 
 
+<link rel="stylesheet" href="/assets/css/transparent-nav.css">
 <style>
 	.main-download {
+		display: flex;
+		align-items: flex-start;
+		gap: 48px;
 		margin-top: 48px;
+	}
+
+	.main-download-links {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.main-download-links .btn-download {
+		width: 100%;
+	}
+	.main-download-links .btn-download:nth-of-type(2n) {
+		background-color: rgb(132 151 174 / 68%);
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+	}
+	.main-download-links .btn-download:nth-of-type(2n) .download-title {
+		color: #f7f7f7;
+	}
+	.main-download-links .btn-download:nth-of-type(2n) .download-hint {
+		background-color: var(--primary-color-subdued);
+	}
+
+	@media (max-width: 900px) {
+		.main-download {
+			align-items: center;
+			flex-direction: column;
+			gap: 36px;
+		}
 	}
 
 	#donations {
@@ -197,25 +230,23 @@
 		color: var(--dark-color-text-title);
 	}
 
+	.features-learn-more {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 16px;
+	}
+
 	.img-auto-size {
 		width: 100%;
 		height: auto;
 	}
 
 	.btn.btn-flat.btn-hero-learn-more {
-		background-color: rgb(111 111 111 / 27%);
-		-webkit-backdrop-filter: blur(4px);
-		backdrop-filter: blur(4px);
+		margin: 0;
 	}
 
 	@media (max-width: 900px) {
-		.main-download {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-wrap: wrap;
-		}
-
 		.features-grid {
 			grid-template-columns: 1fr;
 		}
@@ -238,80 +269,6 @@
 			text-align: left;
 		}
 	}
-
-	header {
-		box-shadow: none;
-		margin-bottom: -70px;
-		background-color: rgb(134 144 154 / 15%);
-		-webkit-backdrop-filter: blur(4px);
-		backdrop-filter: blur(4px);
-	}
-
-	@media (max-width: 1200px) {
-		input#nav_toggle_cb:checked~header {
-			background-color: var(--navbar-background-color);
-		}
-	}
-
-	/* Overwriting nav style */
-	nav#nav a {
-		color: white;
-	}
-
-	nav#nav .fund a {
-		color: var(--fund-color);
-		background-color: var(--base-color);
-	}
-
-	.nav-logo {
-		display: none;
-	}
-
-	.nav-logo.dark-logo {
-		display: inline;
-	}
-
-	#nav_toggle_btn {
-		filter: invert(100%) saturate(0%) brightness(120%);
-	}
-
-	@media (max-width: 1200px) {
-		nav#nav .fund a {
-			background-color: transparent;
-		}
-	}
-
-	@media (max-width: 1200px) and (prefers-color-scheme: light) {
-		nav#nav a {
-			color: var(--navbar-link-color);
-		}
-
-		input#nav_toggle_cb:checked~header #nav_head #nav_toggle_btn {
-			filter: none;
-		}
-
-		input#nav_toggle_cb:checked~header #nav_head .nav-logo {
-			display: inline;
-		}
-
-		input#nav_toggle_cb:checked~header #nav_head .nav-logo.dark-logo {
-			display: none;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		nav#nav .fund {
-			margin-right: 0px;
-		}
-
-		nav#nav .fund a {
-			color: var(--fund-color);
-			background-color: var(--base-color);
-			border-radius: 9px;
-			box-shadow: inset 0 0 0 2px var(--fund-color);
-			padding: 13px;
-		}
-	}
 </style>
 
 <section class="hero">
@@ -323,11 +280,24 @@
 				3D games.</p>
 
 			<div class="main-download">
-				<a href="/download/windows" class="btn btn-download set-os-download-url">
-					<div class="download-title">Download</div>
-					<div class="download-hint">3.5.1</div>
-				</a>
-				<a href="/features" class="btn btn-flat btn-flat-white btn-hero-learn-more">Learn more</a>
+				
+				
+
+				<div class="main-download-links">
+					<a href="/download/windows" class="btn btn-download set-os-download-url" data-version="4"
+						title="Download the latest version of Godot 4">
+						<div class="download-title">Download Latest</div>
+						<div class="download-hint">4.0.3</div>
+					</a>
+
+					<a href="/download/windows" class="btn btn-download set-os-download-url" data-version="3"
+						title="Download the long-term support version of Godot 3">
+						<div class="download-title">Download LTS</div>
+						<div class="download-hint">3.5.2</div>
+					</a>
+				</div>
+
+				<a href="/features" class="btn btn-flat btn-flat-white btn-flat-frosted btn-hero-learn-more">Learn more</a>
 			</div>
 		</div>
 	</div>
@@ -342,12 +312,12 @@
 
 		
 		
-		<a href="/article/whats-missing-in-godot-for-aaa/" style="text-decoration: none">
+		<a href="/article/dev-snapshot-godot-4-1-dev-4/" style="text-decoration: none">
 			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/blog/covers/whats-missing-in-godot-for-aaa.jpg');" href="/article/whats-missing-in-godot-for-aaa/"></div>
+				<div class="thumbnail" style="background-image: url('/storage/blog/covers/dev-snapshot-godot-4-1-dev-4.jpg');"></div>
 				<div class="content">
-					<h3>Godot for AA/AAA game development - What's missing?</h3>
-					<p class="excerpt">Godot 4.0 is coming out soon. It includes major improvements all across the board in both features, performance and usability. Still, one of the biggest questions the community has is: How does it compare with mainstream commercial offerings?</p>
+					<h3>Dev snapshot: Godot 4.1 dev 4</h3>
+					<p class="excerpt">This snapshot signifies that Godot 4.1 is now in feature freeze and will only receive bug fixes going forward. Enjoy this final package of new features and enhancements and give them a good shake!</p>
 				</div>
 			</article>
 		</a>
@@ -357,36 +327,36 @@
 			<div style="display: grid; gap: 18px;">
 				
 				
-				<a href="/article/dev-snapshot-godot-4-0-beta-12/" style="text-decoration: none;">
+				<a href="/article/dev-snapshot-godot-4-1-dev-3/" style="text-decoration: none;">
 					<article class="article-card row">
-						<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/63c/17e/368/63c17e3689796351687911.jpg');" href="/article/dev-snapshot-godot-4-0-beta-12/"></div>
+						<div class="thumbnail" style="background-image: url('/storage/blog/covers/dev-snapshot-godot-4-1-dev-3.jpg');" href="/article/dev-snapshot-godot-4-1-dev-3/"></div>
 						<div>
-							<h3>Dev snapshot: Godot 4.0 beta 12</h3>
-							<p class="excerpt">We released a massive 4.0 beta 11 on Tuesday, and users found a lot of regressions – as we expected!...</p>
+							<h3>Dev snapshot: Godot 4.1 dev 3</h3>
+							<p class="excerpt">The end of May means the approach of the feature freeze for Godot 4.1, and this dev snapshot aims to...</p>
 						</div>
 					</article>
 				</a>
 				
 				
 				
-				<a href="/article/release-candidate-godot-3-5-2-rc-2/" style="text-decoration: none;">
+				<a href="/article/dev-snapshot-godot-3-6-beta-2/" style="text-decoration: none;">
 					<article class="article-card row">
-						<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/63c/053/77e/63c05377eaa1e774008524.jpg');" href="/article/release-candidate-godot-3-5-2-rc-2/"></div>
+						<div class="thumbnail" style="background-image: url('/storage/blog/covers/dev-snapshot-godot-3-6-beta-2.jpg');" href="/article/dev-snapshot-godot-3-6-beta-2/"></div>
 						<div>
-							<h3>Release candidate: Godot 3.5.2 RC 2</h3>
-							<p class="excerpt">While all contributors are on the deck working to finalize the Godot 4.0 release, some of us are sti...</p>
+							<h3>Dev snapshot: Godot 3.6 beta 2</h3>
+							<p class="excerpt">Another beta build for Godot 3.6, implementing important bug fixes and some new features for existin...</p>
 						</div>
 					</article>
 				</a>
 				
 				
 				
-				<a href="/article/godot-4-0-docs-sprint/" style="text-decoration: none;">
+				<a href="/article/maintenance-release-godot-4-0-3/" style="text-decoration: none;">
 					<article class="article-card row">
-						<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/63b/eba/ed6/63bebaed69c6c649257378.png');" href="/article/godot-4-0-docs-sprint/"></div>
+						<div class="thumbnail" style="background-image: url('/storage/blog/covers/maintenance-release-godot-4-0-3.jpg');" href="/article/maintenance-release-godot-4-0-3/"></div>
 						<div>
-							<h3>Godot 4.0 Documentation Sprint</h3>
-							<p class="excerpt">We're starting a docs sprints to get the documentation ready for Godot Engine 4.0 release! Together,...</p>
+							<h3>Maintenance release: Godot 4.0.3</h3>
+							<p class="excerpt">A fresh portion of stability improvements and bugfixes for Godot 4.0 projects, 4.0.3 covers almost e...</p>
 						</div>
 					</article>
 				</a>
@@ -427,7 +397,7 @@
 					<h4>Use the right language for the job</h4>
 					<p>
 						Keep your code modular with an object-oriented API using Godot's own
-						GDScript, C#, C++, or bring your own using GDNative.
+						GDScript, C#, C++, or bring your own using GDExtension.
 					</p>
 				</div>
 			</div>
@@ -488,6 +458,10 @@
 			</div>
 		</a>
 	</div>
+
+	<div class="features-learn-more">
+		<a href="/features" class="btn btn-flat btn-flat-white btn-flat-frosted">Learn more about using Godot</a>
+	</div>
 </section>
 
 <section id="get_involved" class="container padded">
@@ -506,7 +480,7 @@
 				implementation of new features.
 			</p>
 			<a href="https://docs.godotengine.org/en/stable/community/contributing/ways_to_contribute.html#contributing-code"
-				class="btn btn-flat" target="_blank" rel="noopener">Learn more</a>
+				class="btn btn-flat btn-flat-frosted" target="_blank" rel="noopener">Learn more</a>
 		</div>
 
 		<div class="text-center base-padding">
@@ -517,7 +491,7 @@
 				new guides or submitting corrections.
 			</p>
 			<a href="https://docs.godotengine.org/en/stable/community/contributing/ways_to_contribute.html#contributing-to-the-documentation"
-				class="btn btn-flat" target="_blank" rel="noopener">Learn more</a>
+				class="btn btn-flat btn-flat-frosted" target="_blank" rel="noopener">Learn more</a>
 		</div>
 
 		<div class="text-center base-padding">
@@ -527,7 +501,7 @@
 				Found a problem with the engine? Don't forget to report it so that developers can track it down.
 			</p>
 			<a href="https://docs.godotengine.org/en/stable/community/contributing/ways_to_contribute.html#testing-and-reporting-issues"
-				class="btn btn-flat" target="_blank" rel="noopener">Learn more</a>
+				class="btn btn-flat btn-flat-frosted" target="_blank" rel="noopener">Learn more</a>
 		</div>
 
 	</div>
@@ -535,15 +509,16 @@
 
 <section id="donations" class="padded">
 	<div class="container sm-full">
-		<img id="sfc_graphic" src="/assets/home/sfc.svg" alt="Software Freedom Conservancy logo" width="1" height="1"
+		<a href="https://godot.foundation" target="_blank" style="display: inline-block;">
+			<img id="foundation_graphic" src="/assets/home/foundation/godot-foundation-logo-dark.svg" alt="Godot Foundation logo" width="1" height="1"
 			class="img-auto-size" loading="lazy">
-		<h3 class="text-center">Donate</h3>
+		</a>
 		<p class="small auto-margin">
 			You don't need to be an engine developer to help Godot. Consider donating to speed up development and make
 			Godot&nbsp;Engine even more awesome!
 		</p>
 
-		<a href="/donate" class="btn btn-flat btn-flat-white">Learn more</a>
+		<a href="/donate" class="btn btn-flat btn-flat-white btn-flat-frosted">Donate</a>
 	</div>
 </section>
 
@@ -552,34 +527,45 @@
 		<h2 class="text-center">Sponsored by</h2>
 
 		<div class="platinum flex">
+			
 			<a class="sponsor card" href="https://www.gamblify.com/" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/gamblify.png" width="312" height="66" alt="Gamblify" loading="lazy">
+				<img src="/assets/home/sponsors/gamblify.png" alt="Gamblify" loading="lazy">
 			</a>
+			
 			<a class="sponsor card" href="http://spiffcode.com/" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/spiffcode.png" width="291" height="66" alt="Spiffcode" loading="lazy">
+				<img src="/assets/home/sponsors/spiffcode.png" alt="Spiffcode" loading="lazy">
 			</a>
+			
 			<a class="sponsor card" href="https://heroiclabs.com/" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/heroiclabs.png" width="264" height="66" alt="Heroic Labs" loading="lazy">
+				<img src="/assets/home/sponsors/heroiclabs.png" alt="Heroic Labs" loading="lazy">
 			</a>
+			
 		</div>
 		<div class="gold flex">
-			<a class="sponsor card" href="https://scp.games/pandemic/" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/affray-interactive.png" width="220" height="66" alt="Affray Interactive"
-					loading="lazy">
-			</a>
-			<a class="sponsor card" href="https://playfulstudios.com/" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/playful-studios.png" width="196" height="80" alt="Playful Studios"
-					loading="lazy">
-			</a>
-			<a class="sponsor card" href="http://robotgentleman.com/" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/robot-gentleman.png" width="120" height="103" alt="Robot Gentleman"
-					loading="lazy">
-			</a>
+			
 		</div>
 		<div class="silver flex">
-			<a class="sponsor card" href="https://developers.join-striked.com/home" target="_blank" rel="noopener">
-				<img src="/assets/home/sponsors/striked.png?v2" width="171" height="40" alt="Striked" loading="lazy">
+			
+			<a class="sponsor card" href="https://scp.games/pandemic/" target="_blank" rel="noopener">
+				<img src="/assets/home/sponsors/affray-interactive.png" alt="Affray Interactive" loading="lazy">
 			</a>
+			
+			<a class="sponsor card" href="https://playfulstudios.com/" target="_blank" rel="noopener">
+				<img src="/assets/home/sponsors/playful-studios.png" alt="Playful Studios" loading="lazy">
+			</a>
+			
+			<a class="sponsor card" href="http://robotgentleman.com/" target="_blank" rel="noopener">
+				<img src="/assets/home/sponsors/robot-gentleman.png" alt="Robot Gentleman" loading="lazy">
+			</a>
+			
+			<a class="sponsor card" href="https://striked.gg/" target="_blank" rel="noopener">
+				<img src="/assets/home/sponsors/striked.png" alt="Striked" loading="lazy">
+			</a>
+			
+			<a class="sponsor card" href="https://academy.zenva.com/product/godot-game-development-mini-degree/?zva_src=godotengineorg-godot4md" target="_blank" rel="noopener">
+				<img src="/assets/home/sponsors/zenva.png" alt="Zenva" loading="lazy">
+			</a>
+			
 		</div>
 	</div>
 </section>
@@ -592,129 +578,172 @@
 		const htmlLang = document.documentElement.lang;
 		if (window.location.pathname === '/' || window.location.pathname === '/' + htmlLang || window.location.pathname === '/' + htmlLang + '/') {
 			const authors = [
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		{
-			game: 'Resolutiion',
-				by: 'Monolith of Minds',
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				{
+					game: 'Resolutiion',
+					by: 'Monolith of Minds',
 					url: '/showcase/resolutiion/',
-						image: '/assets/showcase/resolutiion-1.jpg',
-					},
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		{
-			game: 'TailQuest: Defense',
-				by: 'Kivano Games',
+					image: '/assets/showcase/resolutiion-1.jpg',
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				{
+					game: 'TailQuest: Defense',
+					by: 'Kivano Games',
 					url: '/showcase/tail-quest/',
-						image: '/assets/showcase/tail-quest.jpg',
-					},
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		{
-			game: 'Ex Zodiac',
-				by: 'Ben Hickling',
+					image: '/assets/showcase/tail-quest.jpg',
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				{
+					game: 'Ex Zodiac',
+					by: 'Ben Hickling',
 					url: '/showcase/ex-zodiac/',
-						image: '/assets/showcase/ex-zodiac.png',
-					},
-		
-		
-		
-		{
-			game: 'Primal Light',
-				by: 'Fat Gem',
+					image: '/assets/showcase/ex-zodiac.png',
+				},
+				
+				
+				
+				{
+					game: 'Primal Light',
+					by: 'Fat Gem',
 					url: '/showcase/primal-light/',
-						image: '/assets/showcase/primal-light-1.png',
-					},
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		{
-			game: 'Beat Invaders',
-				by: 'Raffaele Picca',
+					image: '/assets/showcase/primal-light-1.png',
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				{
+					game: 'Beat Invaders',
+					by: 'Raffaele Picca',
 					url: '/showcase/beat-invaders/',
-						image: '/assets/showcase/beat-invaders.jpg',
-					},
-		
-		
-		
-		{
-			game: 'Fist of the Forgotten',
-				by: 'Lone Wulf Studio',
+					image: '/assets/showcase/beat-invaders.jpg',
+				},
+				
+				
+				
+				{
+					game: 'Fist of the Forgotten',
+					by: 'Lone Wulf Studio',
 					url: '/showcase/fist-of-the-forgotten/',
-						image: '/assets/showcase/fist-of-the-forgotten.jpg',
-					},
-		
-		
-		
-		{
-			game: 'Pingo Adventure',
-				by: 'Orb Square Studio',
+					image: '/assets/showcase/fist-of-the-forgotten.jpg',
+				},
+				
+				
+				
+				{
+					game: 'Pingo Adventure',
+					by: 'Orb Square Studio',
 					url: '/showcase/pingo-adventure/',
-						image: '/assets/showcase/pingo-adventure.jpg',
-					},
-		
-		
-		
-		{
-			game: 'Brotato',
-				by: 'Blobfish',
+					image: '/assets/showcase/pingo-adventure.jpg',
+				},
+				
+				
+				
+				{
+					game: 'BLASTRONAUT',
+					by: 'Perfoon',
+					url: '/showcase/blastronaut/',
+					image: '/assets/showcase/blastronaut-1.jpg',
+				},
+				
+				
+				
+				{
+					game: 'Brotato',
+					by: 'Blobfish',
 					url: '/showcase/brotato/',
-						image: '/assets/showcase/brotato-2.jpg',
-					},
-		
-		
-		
-		{
-			game: 'Dome Keeper',
-				by: 'Bippinbits',
+					image: '/assets/showcase/brotato-2.jpg',
+				},
+				
+				
+				
+				{
+					game: 'Dome Keeper',
+					by: 'Bippinbits',
 					url: '/showcase/dome-keeper/',
-						image: '/assets/showcase/dome-keeper.jpg',
-					},
-		
-		
-		
-		
+					image: '/assets/showcase/dome-keeper.jpg',
+				},
+				
+				
+				
+				
+				
+				{
+					game: 'A Most Extraordinary Gnome',
+					by: 'Save Sloth Studios',
+					url: '/showcase/a-most-extraordinary-gnome/',
+					image: '/assets/showcase/gnome-1.jpg',
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				{
+					game: 'Lumencraft',
+					by: '2Dynamic Games',
+					url: '/showcase/lumencraft/',
+					image: '/assets/showcase/lumen-showcase.jpg',
+				},
+				
+				
+				
+				{
+					game: 'Cassette Beasts',
+					by: 'Bytten Studio',
+					url: '/showcase/cassette-beasts/',
+					image: '/assets/showcase/cassette-beasts-3.webp',
+				},
+				
+				
 			];
 
 		let author = authors[Math.floor(Math.random() * authors.length)];
@@ -756,7 +785,7 @@
 </main>
 
 <footer>
-	<div class="container flex">
+	<div class="container flex footer-container">
 		<div id="copyright">
 			<p>
 				© 2007-2023 Juan Linietsky, Ariel Manzur and <a
@@ -803,9 +832,12 @@
 		</div>
 		<div id="social" class="dark-desaturate">
 			<h4 class="text-right"><a href="/contact">Contact us</a></h4>
-			<div class="flex justify-space-between">
+			<div class="flex justify-space-between" style="gap: 3px;">
 				<a href="https://github.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/github_logo.svg" width="32" height="32" alt="GitHub">
+				</a>
+				<a href="https://mastodon.gamedev.place/@godotengine" target="_blank" rel="noopener">
+					<img src="/assets/footer/mastodon_logo.svg" width="32" height="32" alt="Mastodon">
 				</a>
 				<a href="https://twitter.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/twitter_logo.svg" width="32" height="32" alt="Twitter">
@@ -837,33 +869,30 @@
 			hljs.highlightBlock(block);
 		});
 
-		document.querySelectorAll('.content-article img').forEach((articleImg) => {
-			// Add lightbox elements in blog articles for Tobii.
-			const lightbox = document.createElement('a');
-			lightbox.href = articleImg.src;
-			lightbox.classList.add('lightbox');
-			lightbox.dataset.group = 'article';
-			articleImg.parentNode.appendChild(lightbox);
-			lightbox.appendChild(articleImg);
-		});
-
 		// Initialize lightbox.
 		new Tobii({
 			zoom: false,
 		});
-	});
 
-	// Update any download link to point to identified user's OS.
-	const links = document.querySelectorAll('.set-os-download-url');
-	for (let i = 0; i < links.length; i++) {
-		const link = links[i];
-		link.href = "/download/windows";
-		if (navigator.platform.indexOf('Mac') !== -1) {
-			link.href = "/download/macos";
-		} else if (navigator.platform.indexOf('Linux') !== -1) {
-			link.href = "/download/linux";
+		// Update any download link to point to identified user's OS.
+		const links = document.querySelectorAll('.set-os-download-url');
+		for (let i = 0; i < links.length; i++) {
+			const link = links[i];
+			let link_slug = 'download';
+			if ('version' in link.dataset && link.dataset['version'] === '3') {
+				link_slug = 'download/3.x';
+			}
+
+			let link_platform = 'windows';
+			if (navigator.platform.indexOf('Mac') !== -1) {
+				link_platform = 'macos';
+			} else if (navigator.platform.indexOf('Linux') !== -1) {
+				link_platform = 'linux';
+			}
+
+			link.href = `/${link_slug}/${link_platform}`;
 		}
-	}
+	});
 </script>
 
 

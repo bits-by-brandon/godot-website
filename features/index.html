@@ -8,20 +8,20 @@
 	<meta name="description" content="Discover what Godot has to offer for 2D and 3D game development.">
 	<meta name="theme-color" content="#3d8fcc">
 	<meta property="og:site_name" content="Godot Engine">
-	<meta property="og:url" content="https://godotengine.org">
+	<meta property="og:url" content="https://godotengine.org/features/">
 	<meta name="twitter:site" content="@godotengine">
 
-	<meta property="og:title" content="Godot Engine - Features">
+	<meta property="og:title" content="Features - Godot Engine">
 	<meta property="og:description" content="Discover what Godot has to offer for 2D and 3D game development.">
 	<meta property="og:image" content="https://godotengine.org/assets/og_image.png">
 	<meta property="og:type" content="website">
 	<meta name="twitter:card" content="summary_large_image">
-	<title>Godot Engine - Features</title>
+	<title>Features - Godot Engine</title>
 
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css?106">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -38,15 +38,15 @@
 				<img class="nav-logo dark-logo" src="/assets/logo_dark.svg" width="136" height="48" alt="Godot Engine">
 			</a>
 			<label for="nav_toggle_cb" id="nav_toggle_btn">
-				<img src="/assets/hamburger.svg" width="24" height="24" alt="">
+				<img src="/assets/icons/hamburger.svg" width="24" height="24" alt="Main menu">
 			</label>
 		</div>
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/showcase">Showcase</a></li>
+				<li><a href="/features">Features</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/features">Features</a></li>
+					<li><a href="/showcase">Showcase</a></li>
 				</div>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/community">Community</a></li>
@@ -68,309 +68,918 @@
 <main>
 
 
-
-<div class="head">
-	<div class="container flex eqsize">
-		<div class="main">
-			<h1 class="intro-title">Features</h1>
-		</div>
-		<div class="tabs">
-			<a href="/features" class="title-font  active ">Features</a>
-			<a href="/showcase" class="title-font ">Showcase</a>
-		</div>
-	</div>
-</div>
-
+<link rel="stylesheet" href="/assets/css/transparent-nav.css">
 <style>
-	.head {
-		margin-bottom: 0;
+	.features-why {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: radial-gradient(ellipse closest-side at 50% 45%, #6469ac, #364b7c, #12122b);
+		padding-top: 60px;
+		margin-bottom: 24px;
+		overflow: hidden;
 	}
 
-	section img {
-		display: block;
+	@media (max-width: 900px) {
+		.features-why {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
+	.features-why h2 {
+		color: var(--dark-color-text-title);
+		font-size: 40px;
+		margin: 36px 54px 8px 54px;
+	}
+
+	.btn-see-showcase {
+		line-height: 26px;
+		text-align: center;
+	}
+
+	.feature-container {
+		display: grid;
+		justify-content: center;
+		column-gap: 28px;
+		row-gap: 24px;
+		grid-template-columns: 1fr;
+		margin: auto;
+		margin-bottom: 42px;
+		width: 1200px;
+		max-width: 1200px;
+	}
+	@media (max-width: 1250px) {
+		.feature-container {
+			width: auto;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+	@media (max-width: 900px) {
+		.feature-container {
+			width: auto;
+			overflow: auto;
+			flex-direction: column;
+		}
+	}
+
+	.feature-container h3 {
+		font-size: 22px;
+		margin-bottom: 4px;
+	}
+
+	.feature-container.feature-container-2x {
+		grid-template-columns: 1fr 1fr;
+	}
+	.feature-container.feature-container-2x h3 {
+		grid-column: span 2;
+	}
+	@media (max-width: 1020px) {
+		.feature-container.feature-container-2x {
+			grid-template-columns: 1fr;
+		}
+		.feature-container.feature-container-2x h3 {
+			grid-column: span 1;
+		}
+	}
+
+	.feature-container.feature-container-3x {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.feature-container.feature-container-3x h3 {
+		grid-column: span 3;
+	}
+	@media (max-width: 1020px) {
+		.feature-container.feature-container-3x {
+			grid-template-columns: 1fr 1fr;
+		}
+		.feature-container.feature-container-3x h3 {
+			grid-column: span 2;
+		}
+	}
+	@media (max-width: 800px) {
+		.feature-container.feature-container-3x {
+			grid-template-columns: 1fr;
+		}
+		.feature-container.feature-container-3x h3 {
+			grid-column: span 1;
+		}
+	}
+
+	.feature-card {
+		background-color: var(--card-background-color);
+		border-radius: 12px;
+		padding: 20px;
+		transition: 0.1s filter;
+	}
+	.feature-card:hover {
+		filter: brightness(112.5%);
+	}
+
+	.feature-card h4 {
+		color: var(--feature-heading-color);
+		font-family: var(--default-font-family);
+		font-size: 18px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	.feature-card p {
+		font-size: 95%;
+		margin-top: 24px;
+		margin-bottom: 12px;
+	}
+
+	.feature-card strong {
+		color: var(--feature-note-color);
+		font-weight: 600;
+	}
+
+	.feature-card code {
+		background-color: #0f172e36;
+		border-radius: 3px;
+		padding: 1px 4px;
+	}
+
+	.features-showreel {
+		background-color: var(--dark-color);
+		color: var(--dark-color-text-hl);
+		padding: 24px 32px 8px 32px;
+		margin-bottom: 36px;
+		width: auto;
+		max-width: 100%;
+	}
+
+	.features-showreel p {
+		margin-top: 0;
+		margin-bottom: 8px;
+	}
+
+	.features-complete-list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 12px;
+	}
+
+	.features-complete-list .btn.btn-flat.btn-flat-white {
+		color: var(--base-color-text-title);
+	}
+
+	.features-download {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		background-color: var(--dark-color);
+		padding: 24px;
+		padding-bottom: 60px;
+		width: auto;
+		max-width: 100%;
+	}
+	@media (max-width: 900px) {
+		.features-download {
+			padding: 20px;
+		}
+	}
+
+	.features-download h2 {
+		color: var(--dark-color-text-title);
+		font-weight: 600;
+		margin: 0;
+		margin-bottom: 16px;
+	}
+
+	.features-download p {
+		color: var(--dark-color-text);
+		margin: 0;
+	}
+
+	.features-download-ready {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 26px;
+	}
+
+	.features-download-ready .btn-download {
+		min-width: 310px;
+	}
+
+	.features-download-ready .btn-download:nth-of-type(2n) {
+		background-color: rgb(132 151 174 / 68%);
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+	}
+	.features-download-ready .btn-download:nth-of-type(2n) .download-title {
+		color: #f7f7f7;
+	}
+	.features-download-ready .btn-download:nth-of-type(2n) .download-hint {
+		background-color: var(--primary-color-subdued);
+	}
+
+	.features-showcase {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: var(--dark-color-text-hl);
 		width: 100%;
-		height: auto;
-		border-radius: 0.5rem;
 	}
 
-	h2 {
-		width: 70%;
+	.showcase-carousel {
+		position: relative;
+		width: 100%;
+		max-width: 720px;
+		aspect-ratio: 16/9;
+		margin: 100px 0 60px 0;
+	}
+	@media (max-width: 540px) {
+		.showcase-carousel {
+			margin-top: 60px;
+		}
 	}
 
-	section,
-	section.container {
-		margin-bottom: 64px;
+	.showcase-frame {
+		position: absolute;
+		max-width: 100%;
+		max-height: 100%;
+		aspect-ratio: 16/8;
+		transform: scale(1.7) translate(10px, 12px);
+		filter: brightness(0.85) saturate(0.75);
 	}
 
-	section .content {
-		background-color: var(--transparent-cover-darker);
+	.showcase-flip-left,
+	.showcase-flip-right {
+		position: absolute;
+		top: 50%;
+		left: 12px;
+		width: 20px;
+		height: 36px;
+		transform: translateY(-50%);
+		background-image: url('/assets/icons/arrow-flip.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		filter: drop-shadow(var(--more-shadow));
+		z-index: 5;
+	}
+	.showcase-flip-left {
+		transform: translateY(-50%) scaleX(-1.0);
+	}
+	.showcase-flip-right {
+		left: auto;
+		right: 12px;
 	}
 
-	.title-padded {
-		padding-top: 32px;
-		padding-bottom: 42px;
+	.showcase-items {
+		position: relative;
+		overflow: hidden;
+		aspect-ratio: 16/9;
 	}
 
-	#call-to-action .btn.btn-download {
-		margin-top: 32px;
+	.showcase-item {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--dark-color);
+		width: 100%;
+		height: 100%;
+	}
+	.showcase-item-transition {
+		transition: transform 0.4s ease-in-out, z-index 0.1s linear 0.4s;
+	}
+
+	.showcase-item img {
+		width: 100%;
+	}
+
+	.showcase-credits {
+		position: absolute;
+		bottom: 12px;
+		right: 16px;
+		background: var(--hero-text-background-color);
+		border-radius: 8px;
+		padding: 2px 10px;
+	}
+
+	.showcase-title {
+		color: white;
+		font-weight: 600;
+	}
+
+	.showcase-author {
+		color: #b3c1df;
+		font-size: 95%;
+		opacity: 0.9;
+	}
+
+	.showcase-credits a {
+		text-decoration: none;
+	}
+
+	footer {
+		margin-top: 0;
 	}
 </style>
 
-<section id="design" style="margin-top: 24px">
-	<div class="container flex eqsize">
-		<div>
-			<img src="/assets/features/design_graphic.svg" width="500" height="600" alt="">
+<div class="features-why">
+	<h2>
+		Why Godot is right for you
+	</h2>
+
+	<div class="features-showcase" id="showcase">
+		<p>
+			A picture is worth a thousand words, and these developers have chosen Godot for their projects:
+		</p>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// We assume that it can't be wrapped more than once.
+				const wrapIndex = (index) => {
+					if (index < 0) {
+						return showcaseItems.length + index;
+					}
+					if (index >= showcaseItems.length) {
+						return showcaseItems.length - index;
+					}
+					return index;
+				};
+
+				const showcaseItems = document.querySelectorAll('.showcase-item');
+				let currentIndex = Math.floor(Math.random() * showcaseItems.length);
+
+				const setItemByIndex = (itemIndex, firstTime = false) => {
+					const prevIndex = wrapIndex(currentIndex - 1);
+					const nextIndex = wrapIndex(currentIndex + 1);
+
+					showcaseItems.forEach((item, index) => {
+						if (index === itemIndex) {
+							if (!firstTime) {
+								item.classList.add('showcase-item-transition');
+							}
+							item.style.zIndex = '2';
+							item.style.transform = 'translateX(0)';
+						}
+						else if (index === prevIndex) {
+							if (!firstTime) {
+								item.classList.add('showcase-item-transition');
+							}
+							item.style.zIndex = '3';
+							item.style.transform = 'translateX(-100%)';
+						}
+						else if (index === nextIndex) {
+							if (!firstTime) {
+								item.classList.add('showcase-item-transition');
+							}
+							item.style.zIndex = '3';
+							item.style.transform = 'translateX(100%)';
+						}
+						else  {
+							item.classList.remove('showcase-item-transition');
+							item.style.zIndex = '1';
+							item.style.transform = 'translateX(0)';
+						}
+					});
+				}
+				setItemByIndex(currentIndex, true);
+
+				const prevItemButton = document.querySelector('.showcase-flip-left');
+				prevItemButton.addEventListener('click', () => {
+					currentIndex = wrapIndex(currentIndex - 1);
+					setItemByIndex(currentIndex);
+				});
+				const nextItemButton = document.querySelector('.showcase-flip-right');
+				nextItemButton.addEventListener('click', () => {
+					currentIndex = wrapIndex(currentIndex + 1);
+					setItemByIndex(currentIndex);
+				});
+			});
+		</script>
+
+		<div class="showcase-carousel">
+			<img src="/assets/features/editor-frame.png?2" class="showcase-frame" />
+
+			<div class="showcase-items">
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/resolutiion-1.jpg" load="lazy" alt="Resolutiion - Monolith of Minds" />
+					<div class="showcase-credits">
+						<a href="/showcase/resolutiion/">
+							<span class="showcase-title">Resolutiion</span> <span class="showcase-author">- Monolith of Minds</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/tail-quest.jpg" load="lazy" alt="TailQuest: Defense - Kivano Games" />
+					<div class="showcase-credits">
+						<a href="/showcase/tail-quest/">
+							<span class="showcase-title">TailQuest: Defense</span> <span class="showcase-author">- Kivano Games</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/ex-zodiac.png" load="lazy" alt="Ex Zodiac - Ben Hickling" />
+					<div class="showcase-credits">
+						<a href="/showcase/ex-zodiac/">
+							<span class="showcase-title">Ex Zodiac</span> <span class="showcase-author">- Ben Hickling</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/primal-light-1.png" load="lazy" alt="Primal Light - Fat Gem" />
+					<div class="showcase-credits">
+						<a href="/showcase/primal-light/">
+							<span class="showcase-title">Primal Light</span> <span class="showcase-author">- Fat Gem</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/beat-invaders.jpg" load="lazy" alt="Beat Invaders - Raffaele Picca" />
+					<div class="showcase-credits">
+						<a href="/showcase/beat-invaders/">
+							<span class="showcase-title">Beat Invaders</span> <span class="showcase-author">- Raffaele Picca</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/fist-of-the-forgotten.jpg" load="lazy" alt="Fist of the Forgotten - Lone Wulf Studio" />
+					<div class="showcase-credits">
+						<a href="/showcase/fist-of-the-forgotten/">
+							<span class="showcase-title">Fist of the Forgotten</span> <span class="showcase-author">- Lone Wulf Studio</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/pingo-adventure.jpg" load="lazy" alt="Pingo Adventure - Orb Square Studio" />
+					<div class="showcase-credits">
+						<a href="/showcase/pingo-adventure/">
+							<span class="showcase-title">Pingo Adventure</span> <span class="showcase-author">- Orb Square Studio</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/blastronaut-1.jpg" load="lazy" alt="BLASTRONAUT - Perfoon" />
+					<div class="showcase-credits">
+						<a href="/showcase/blastronaut/">
+							<span class="showcase-title">BLASTRONAUT</span> <span class="showcase-author">- Perfoon</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/brotato-2.jpg" load="lazy" alt="Brotato - Blobfish" />
+					<div class="showcase-credits">
+						<a href="/showcase/brotato/">
+							<span class="showcase-title">Brotato</span> <span class="showcase-author">- Blobfish</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/dome-keeper.jpg" load="lazy" alt="Dome Keeper - Bippinbits" />
+					<div class="showcase-credits">
+						<a href="/showcase/dome-keeper/">
+							<span class="showcase-title">Dome Keeper</span> <span class="showcase-author">- Bippinbits</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/gnome-1.jpg" load="lazy" alt="A Most Extraordinary Gnome - Save Sloth Studios" />
+					<div class="showcase-credits">
+						<a href="/showcase/a-most-extraordinary-gnome/">
+							<span class="showcase-title">A Most Extraordinary Gnome</span> <span class="showcase-author">- Save Sloth Studios</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/lumen-showcase.jpg" load="lazy" alt="Lumencraft - 2Dynamic Games" />
+					<div class="showcase-credits">
+						<a href="/showcase/lumencraft/">
+							<span class="showcase-title">Lumencraft</span> <span class="showcase-author">- 2Dynamic Games</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="showcase-item">
+					<img src="/assets/showcase/cassette-beasts-3.webp" load="lazy" alt="Cassette Beasts - Bytten Studio" />
+					<div class="showcase-credits">
+						<a href="/showcase/cassette-beasts/">
+							<span class="showcase-title">Cassette Beasts</span> <span class="showcase-author">- Bytten Studio</span>
+						</a>
+					</div>
+				</div>
+				
+				
+			</div>
+
+			<div class="showcase-flip-left"></div>
+			<div class="showcase-flip-right"></div>
 		</div>
 
-		<div class="title-padded">
-			<h2>Innovative design</h2>
+		<a href="/showcase" class="btn btn-flat btn-flat-white btn-flat-frosted btn-see-showcase">
+			See more projects made with Godot
+		</a>
+	</div>
+</div>
+
+<div class="features-wrapper">
+
+	<div class="container" id="features">
+		<h2>Main features</h2>
+	</div>
+
+	<div class="feature-container feature-container-3x" id="design">
+		<h3>Intuitive scene-driven design</h3>
+
+		<div class="card feature-card">
+			<h4>Build your game from simple blocks</h4>
 			<p>
-				<em>Create games with ease using Godot's unique approach to game development.</em>
-			<ul class="text-left">
-				<li><strong>Nodes for all your needs.</strong> Godot comes with hundreds of built-in nodes that make game design
-					a breeze. You can also create your own for custom behaviors, editors and much more.</li>
-				<li><strong>Flexible scene system.</strong> Create node compositions with support for instancing and
-					inheritance.</li>
-				<li><strong>Visual editor</strong> with all the tools you need packed into a beautiful and uncluttered
-					context-sensitive UI.</li>
-				<li><strong>Friendly content creation pipeline</strong> for artists, level designers, animators and everyone in
-					between.</li>
-				<li><strong>Persistent live editing</strong> where changes are not lost after stopping the game. It even works
-					on mobile devices!</li>
-				<li><strong>Create your own custom tools</strong> with ease using the incredible tool system.</li>
-			</ul>
+				Use building blocks called nodes to create more complex and reusable
+				scenes. Add scripts to your scenes and customize built-in behavior to
+				implement your unique game mechanics. Rely on composition and node hierarchy
+				to make game logic clear at a glance.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Extend beyond features provided by the engine</h4>
+			<p>
+				Make your scenes into full-featured components, with tools for your
+				designers to tweak and adjust the look and function. Share your components
+				with the community of like-minded developers as addons and templates.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Create data-driven elements with custom resources</h4>
+			<p>
+				<strong>New in 4.0:</strong> Define scriptable objects called resources
+				to describe characters, entities, and data structures in your game. Use
+				your custom objects directly in the editor by assigning them to nodes.
+				Resources come with high-level API to store and read them, and they support
+				every Godot type, including other resources.
 			</p>
 		</div>
 	</div>
-</section>
 
-<section id="features_3d" class="container sm-full">
-	<a href="/assets/features/3dgames.jpg" class="lightbox" data-group="features">
-		<img src="/assets/features/3dgames.jpg" width="1587" height="893" alt="Screenshot of Infinistate by fracteed"
-			style="background: linear-gradient(90deg, #8e3019 23%, #381d15 68%, #150f0e 80%, #150f0e 94%)" loading="lazy" />
-	</a>
-	<div class="title-padded base-padding">
-		<h2>Gorgeous 3D graphics</h2>
-		<em>
-			The physically-based renderer comes with a ton of features that will make your games look incredible.
-		</em>
-	</div>
+	<div class="feature-container feature-container-2x" id="script">
+		<h3>Coding tools that fit your needs</h3>
 
-	<div class="flex eqsize responsive base-padding">
-		<ul>
-			<li><strong>Innovative architecture</strong> that combines the best of forward rendering with the efficiency of
-				deferred rendering.</li>
-			<li><strong>Physically-based rendering</strong> with full MSAA and FXAA support.</li>
-			<li><strong>Full principled BSDF</strong> with subsurface scattering, reflection, refraction, anisotropy,
-				clearcoat, transmittance and more.</li>
-		</ul>
-		<ul>
-			<li><strong>Global illumination</strong> for real-time gorgeous graphics. It can also be pre-baked for beautiful
-				results even on low-end devices.</li>
-			<li><strong>Mid- and Post-processing effects</strong> including a tonemapper that supports HDR, multiple standard
-				curves and auto exposure, screen-space reflections, fog, bloom, depth of field and much more.</li>
-			<li><strong>Easy-to-use shader language</strong> based on GLSL, with built-in editor and code completion.</li>
-		</ul>
-	</div>
-</section>
-
-<section id="features_2d" class="container sm-full">
-	<a href="/assets/features/2dgames.jpg" class="lightbox" data-group="features">
-		<img src="/assets/features/2dgames.jpg" width="1186" height="696" alt="Screenshot of Slyway by Guaranapps"
-			style="background: linear-gradient(90deg, #4b5a6b 36%, #54687e 54%, #54677c 90%, #3f649e 95%)" loading="lazy" />
-	</a>
-	<div class="title-padded base-padding">
-		<h2>Create 2D games with ease</h2>
-		<em>Godot comes with a fully-dedicated 2D engine packed with features.</em>
-	</div>
-
-	<div class="flex eqsize responsive base-padding">
-		<ul>
-			<li><strong>Work in pixels as your units</strong>, but scale to any screen size and aspect ratio.</li>
-			<li><strong>Tile map editor</strong> with auto-tiling, rotation, custom grid shapes and multiple layers.</li>
-			<li><strong>2D lights and normal maps</strong> to give your 2D games a more realistic look. </li>
-		</ul>
-		<ul>
-			<li><strong>Animate your games</strong> using cut-out or sprite-based animation. </li>
-			<li><strong>Flexible kinematic controller</strong> for collision detection without physics.</li>
-		</ul>
-	</div>
-</section>
-
-<section id="animation" class="container flex eqsize responsive">
-	<div style="overflow: hidden;">
-		<a href="/assets/features/animate.jpg" class="lightbox" data-group="features">
-			<img src="/assets/features/animate.jpg" width="780" height="420"
-				alt="Screenshot of Godot's animation editor by ndee85"
-				style="background: linear-gradient(90deg, #423f4b 33%, #47444f 40%, #47444f 71%, #3c3a46 81%)" loading="lazy" />
-		</a>
-	</div>
-	<div class="base-padding" style="padding-top: 0;">
-		<h2>Animate everything</h2>
-		<em>The most flexible animation system.</em>
-		<ul>
-			<li><strong>Animate literally everything</strong>, from bones and objects to function calls.</li>
-			<li><strong>Use custom transition curves and tweens</strong> to create incredible animations.</li>
-			<li><strong>Helpers to animate 2D rigs</strong>, with skeletons and IK.</li>
-			<li><strong>Efficient optimizer</strong> to pack imported 3D animations.</li>
-		</ul>
-	</div>
-</section>
-
-<div class="flex container responsive eqsize sm-full">
-	<section id="script">
-		<div class="base-padding">
-			<h2>Script with full freedom</h2>
-			<em>More choices than any other engine.</em>
-			<ul>
-				<li>
-					<strong>GDScript</strong> Python-like scripting language, designed to make games with zero hassle.
-					<a href="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html">Learn
-						why our community loves it.</a>
-				</li>
-				<li>
-					<strong>
-						<a href="https://docs.godotengine.org/en/stable/getting_started/scripting/c_sharp/c_sharp_basics.html">Full
-							C# 8.0 support</a>
-					</strong> using Mono.
-				</li>
-				<li>
-					<strong>Full C++ support</strong> without needing to recompile the engine using
-					<a
-						href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdnative/what_is_gdnative.html">GDNative</a>.
-				</li>
-				<li>
-					<strong><a
-							href="https://docs.godotengine.org/en/stable/getting_started/scripting/visual_script/index.html">Visual
-							scripting</a></strong>
-					using blocks and connections.
-				</li>
-				<li>
-					<strong><a
-							href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdnative/what_is_gdnative.html#supported-languages">Additional
-							languages</a></strong>
-					with community-provided support for Rust, Nim, D and other languages.
-				</li>
-				<li><strong>Built-in editor</strong> with syntax highlighting, real-time parser and code completion.</li>
-				<li><strong>Integrated documentation.</strong> Browse and search the whole API offline, without leaving the
-					editor.</li>
-			</ul>
+		<div class="card feature-card">
+			<h4>Write code without hurdles with a high-level scripting language</h4>
+			<p>
+				Get things done quickly with Godot's built-in scripting language GDScript.
+				Inspired by Python and other languages, it is easy to pick up even if you
+				are a beginner. Tight engine integration allows it to express game logic
+				in a clear and natural form.
+				<br><br>
+				<strong>New in 4.0:</strong> GDScript offers optional static typing support,
+				boosting your coding efficiency and runtime performance. Powerful language
+				features and first-class functions allow for expressive yet concise code.
+			</p>
 		</div>
-	</section>
 
-	<section id="debug">
-		<div class="base-padding">
-			<h2>Debug &amp; Optimize</h2>
-			<em>
-				Solve bugs and performance bottlenecks with the
-				<a href="https://docs.godotengine.org/en/stable/tutorials/debug/overview_of_debugging_tools.html">built-in
-					debugger</a>.
-			</em>
-			<ul>
-				<li><strong>Explore and modify</strong> your project while it's running, even on mobile devices.</li>
-				<li><strong>Keeps changes</strong> by default after closing the project.</li>
-				<li><strong>Built-in profiler</strong> with graph plotting and time seeking.</li>
-				<li>Video memory debugger.</li>
-				<li><strong>Error logger</strong> with full stack traces.</li>
-				<li><strong>Network profiler</strong> with per-node remote call tracking and bandwidth usage estimation.</li>
-			</ul>
+		<div class="card feature-card">
+			<h4>Leverage your C# experience to feel right at home</h4>
+			<p>
+				If you're an experienced C# user, Godot offers you first-class support
+				for the .NET platform. Power your game with familiar libraries and give
+				them performance boost, while still benefiting from close engine integration.
+				<br><br>
+				<strong>Note:</strong> .NET support is provided as a dedicated engine executable.
+			</p>
 		</div>
-	</section>
-</div>
 
-<div class="flex container responsive eqsize sm-full">
-	<section id="multiplatform-editor">
-		<div class="base-padding">
-			<h2>Multi-platform editor</h2>
-			<em>Create games on any desktop OS and Android.</em>
-			<ul>
-				<li><strong>Works on Windows, macOS, Linux, *BSD and Android&nbsp;<em>(experimental)</em>.</strong><br> The
-					editor runs in 32-bit and 64-bit on all platforms, with native Apple Silicon support.</li>
-				<li><strong>Small download</strong> (around 35 MB), and you are ready to go.</li>
-				<li><strong>Easy to compile</strong> on any platform (no dependency hell).</li>
-			</ul>
+		<div class="card feature-card">
+			<h4>Pick from a variety of community-supported languages</h4>
+			<p>
+				Godot is built to be extended, and that means you can choose
+				a programming language not provided by the Godot team itself.
+				Thanks to our community there are many language bindings for
+				popular tools like Rust, Nim, Python, and JavaScript.
+				<br><br>
+				<strong>New in 4.0:</strong> C++ supports comes officially in the form of
+				GDExtension API, which gives you a way to script and program your game
+				components for maximum performance without having to recompile the engine.
+			</p>
 		</div>
-		<div></div>
-	</section>
-	<section id="deploy">
-		<div class="base-padding">
-			<h2>Multi-platform deploy</h2>
-			<em>Deploy games everywhere!</em>
-			<ul>
-				<li><strong>Export to desktop platforms:</strong> Windows, macOS, Linux, UWP, and *BSD.</li>
-				<li><strong>Export to mobile platforms:</strong> iOS and Android.</li>
-				<li>
-					<strong>Consoles:</strong> Nintendo Switch, PlayStation 4, Xbox One via third-party providers
-					<a href="https://docs.godotengine.org/en/stable/tutorials/platform/consoles.html">(read more).</a>
-				</li>
-				<li><strong>Export to the web</strong> using HTML5 and WebAssembly.</li>
-				<li><strong>One-click deploy &amp; export</strong> to most platforms. Easily create custom builds as well.</li>
-			</ul>
+
+		<div class="card feature-card">
+			<h4>Modify the engine itself and integrate with 3rd party libraries</h4>
+			<p>
+				Thanks to the modular structure and a straightforward build process of Godot
+				you can create your own engine modules. Gain every last drop of performance
+				or integrate with many 3rd party libraries with low-level C++ code.
+			</p>
 		</div>
-		<div></div>
-	</section>
-</div>
-
-<section id="xrsupport" class="container flex eqsize responsive">
-	<div class="base-padding" style="padding-top: 0;">
-		<h2>XR support</h2>
-		<p>Godot makes cross-platform Augmented and Virtual Reality development easy.</p>
-
-		<ul>
-			<li><strong>Works with many headsets</strong> including the Meta Quest, Valve Index, HTC Vive, Oculus Rift, all
-				Microsoft MR headsets, and many more.</li>
-			<li><strong>Support for OpenXR</strong>, an emerging open standard that most hardware vendors are moving to.</li>
-			<li><strong>Plugins</strong> give access to various proprietary SDKs, such as OpenVR (SteamVR) and the legacy
-				Oculus SDKs.</li>
-			<li><strong>WebXR</strong> can deliver AR/VR experiences via a web browser.</li>
-			<li><strong>ARKit</strong> allows creating AR apps for iOS.</li>
-		</ul>
 	</div>
-	<div style="overflow: hidden;">
-		<a href="/assets/features/xrsupport.jpg" class="lightbox" data-group="features">
-			<img src="/assets/features/xrsupport.jpg" width="716" height="420" alt="Screenshot of XR support by Mux213"
-				style="background: linear-gradient(90deg, #50594d 6%, #2b221b 43%, #7d7a77 82%, #84817e 92%)" loading="lazy" />
-		</a>
+
+	<div class="feature-container feature-container-3x" id="features_3d">
+		<h3>Simple yet powerful 3D engine</h3>
+
+		<div class="card feature-card">
+			<h4>Support both high and low-end devices</h4>
+			<p>
+				Make beautiful 3D games for a range of devices, starting
+				from desktop computers and ending with mid-range Android
+				phones. Powered by OpenGL, Godot allows your projects
+				to run on most modern GPUs, including integrated graphics.
+				<br><br>
+				<strong>New in 4.0:</strong> With the new Vulkan renderer
+				and a set of modern graphical features, bring your worlds
+				to life and harvest the power of gaming GPUs for your
+				benefit.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Seamlessly integrate with your asset pipeline</h4>
+			<p>
+				Bring your 3D models into your game world with a robust
+				importing pipeline. Take entire scenes — with animated models,
+				lighting, cameras, and physics objects, — and customize how
+				the engine views them. Modify your assets and see changes
+				in the engine immediately.
+				<br><br>
+				<strong>New in 4.0:</strong> Import Blender files directly
+				for fast iterations or keep using familiar glTF and FBX formats.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Create animated videos and prerendered cutscenes in engine</h4>
+			<p>
+				<strong>New in 4.0:</strong> With the new movie maker mode you
+				can record gameplay and scripted scenes from your project at
+				a stable framerate and guaranteed simulation speed. Together
+				with Godot's animation capabilities, make the most out of the
+				engine's visuals.
+			</p>
+		</div>
 	</div>
-</section>
 
-<section id="collaborate" class="container flex eqsize responsive">
-	<div>
-		<h2>Easy teamwork</h2>
-		<p>Godot is designed from the ground up for smooth teamwork.</p>
+	<div class="feature-container feature-container-3x" id="features_2d">
+		<h3>Specialized 2D workflow for games and apps</h3>
 
-		<ul>
-			<li><strong>Friendly filesystem usage</strong> that works great with version control systems like Git, Subversion,
-				Mercurial, you name it.</li>
-			<li><strong>Scene instancing</strong> makes teamwork a breeze. Every team member can focus on their own scene, be
-				it a character, level, etc., and edit without stepping on each other's toes.</li>
-			<li>Text-based descriptive and optimal scene format.</li>
-			<li>Script syntax supported by GitHub.</li>
-		</ul>
+		<div class="card feature-card">
+			<h4>Work with real 2D and pixel-based unit system</h4>
+			<p>
+				Thanks to a dedicated 2D pipeline you can forget about Z axis,
+				and simplify your game logic. Think in pixels and screen coordinates,
+				while the engine does the rest.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Save time creating 2D worlds with a tile map editor</h4>
+			<p>
+				Whether you want procedural generation or a meticulously hand-crafted
+				level, with Godot's built-in tile map editor you can achieve every goal.
+				Import a sprite and convert it into a database of building blocks for
+				your 2D worlds.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Master usability with a flexible GUI system</h4>
+			<p>
+				Build scalable and adaptive user interfaces with Godot's unique
+				GUI system. Created specifically to power layouts common to games
+				it is also capable of handling complex UI applications and tools.
+				<br><br>
+				<em>For an example of what Godot's UI system is capable of see the Godot editor itself!</em>
+			</p>
+		</div>
 	</div>
-</section>
 
-<section id="call-to-action" class="container flex eqsize responsive"
-	style="background-color: var(--dark-color); box-shadow: var(--base-shadow); padding: 1.5rem 1.5rem 0.5rem 1.5rem">
-	<div>
-		<h2 class="text-center" style="color: white; width: 100%">Ready to start?</h2>
-		<p class="text-center" style="color: white; margin-bottom: -0.5rem">Download Godot and try it out today!</p>
-		<div class="text-center">
-			<a href="/download" class="btn btn-download">
-				<div class="download-title">Download</div>
-				<div class="download-hint">3.5.1</div>
+	<div class="features-showreel">
+		<div class="feature-container">
+			<h3>Choice of many developers</h3>
+
+			<p>
+				Watch our annual showreel videos to see more examples of projects using Godot!
+			</p>
+
+			<style>
+	.showreel-video img {
+		max-width: 100%;
+		background-color: var(--card-background-color);
+		box-shadow: 0 5px 10px -3px #00000078;
+		border-radius: 7px;
+		display: block;
+	}
+</style>
+
+<section class="flex grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))">
+	<article>
+		<div class="showreel-video">
+			<a href="https://www.youtube.com/watch?v=UAS_pUTFA7o" target="_blank">
+				<img src="/assets/showcase/desktop-showcase.jpg" alt="Showreel: 2022 Godot Desktop Games">
 			</a>
-			<br>
-			<a href="https://docs.godotengine.org/en/stable/about/list_of_features.html"
-				class="btn btn-flat btn-flat-white">Complete list of features</a>
+		</div>
+	</article>
+
+	<article>
+		<div class="showreel-video">
+			<a href="https://www.youtube.com/watch?v=xF3QiQfQxeQ" target="_blank">
+				<img src="/assets/showcase/mobile-showcase.jpg" alt="Showreel: 2022 Godot Mobile Games">
+			</a>
+		</div>
+	</article>
+
+	<article>
+		<div class="showreel-video">
+			<a href="https://www.youtube.com/watch?v=9kKp0oguzr8" target="_blank">
+				<img src="/assets/showcase/apps-showcase.jpg" alt="Showreel: 2022 Godot Apps &amp; Tools">
+			</a>
+		</div>
+	</article>
+</section>
 		</div>
 	</div>
-</section>
+
+	<div class="feature-container feature-container-3x" id="deploy">
+		<h3>Cross-platform support with one project</h3>
+
+		<div class="card feature-card">
+			<h4>Deliver your game to desktop and mobile</h4>
+			<p>
+				Develop and publish your project on any modern desktop platform.
+				Let everyone play your game with by deploying to web and mobile.
+				Make your game handle various forms of inputs and share the same
+				project between every release.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Test directly on your target device</h4>
+			<p>
+				<strong>New in 4.0:</strong> Iterate on real hardware, or with
+				an emulator by deploying your game directly to the target device
+				over SSH. Run any project on a mobile device, on another desktop,
+				or on your favorite Linux-based handheld with full debug and inspect
+				capabilities.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Partner with a publisher to target consoles</h4>
+			<p>
+				If you want to release to a console, you can find several
+				3rd party publishers which specialize on that. Godot games
+				can run on any modern hardware, all you need to worry about
+				is your performance and controls.
+			</p>
+		</div>
+	</div>
+
+	<div class="feature-container feature-container-2x" id="open_source">
+		<h3>Completely open and free</h3>
+
+		<div class="card feature-card">
+			<h4>Download and create with no contracts or hidden fees</h4>
+			<p>
+				Godot is free under the MIT license. This means you don't owe
+				us anything (other than a friendly mention), and can do with your
+				project or even the engine itself whatever you want. Build your game
+				or build your own engine on top of it — it's all in your hands.
+			</p>
+		</div>
+
+		<div class="card feature-card">
+			<h4>Find the logic behind any system in an open source codebase</h4>
+			<p>
+				No need to wait for a support team to respond, when you can read
+				the source code. Godot is an open book, and you can figure out everything
+				that is not yet documented after a single <code>git checkout</code>.
+				If you find and fix an issue, we will appreciate a PR upstream too.
+			</p>
+		</div>
+	</div>
+
+	<div class="features-complete-list">
+		<a href="https://docs.godotengine.org/en/stable/about/list_of_features.html" class="btn btn-flat btn-flat-white btn-flat-frosted">
+			View a complete list of features
+		</a>
+	</div>
+
+</div>
+
+<div id="call-to-action" class="container card features-download">
+	<h2>Ready to start?</h2>
+
+	<div class="features-download-ready">
+		
+		
+
+		<p>Download the <strong>latest version of Godot 4</strong> right now and begin your creative journey!</p>
+		<a href="/download/windows" class="btn btn-download set-os-download-url" data-version="4"
+			title="Download the latest version of Godot 4">
+			<div class="download-title">Download Latest</div>
+			<div class="download-hint">4.0.3</div>
+		</a>
+
+		<p>Want to stick to the <strong>true and trusted Godot 3</strong>? Download the long-term support version!</p>
+		<a href="/download/windows" class="btn btn-download set-os-download-url" data-version="3"
+			title="Download the long-term support version of Godot 3">
+			<div class="download-title">Download LTS</div>
+			<div class="download-hint">3.5.2</div>
+		</a>
+	</div>
+</div>
 
 </main>
 
 <footer>
-	<div class="container flex">
+	<div class="container flex footer-container">
 		<div id="copyright">
 			<p>
 				© 2007-2023 Juan Linietsky, Ariel Manzur and <a
@@ -417,9 +1026,12 @@
 		</div>
 		<div id="social" class="dark-desaturate">
 			<h4 class="text-right"><a href="/contact">Contact us</a></h4>
-			<div class="flex justify-space-between">
+			<div class="flex justify-space-between" style="gap: 3px;">
 				<a href="https://github.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/github_logo.svg" width="32" height="32" alt="GitHub">
+				</a>
+				<a href="https://mastodon.gamedev.place/@godotengine" target="_blank" rel="noopener">
+					<img src="/assets/footer/mastodon_logo.svg" width="32" height="32" alt="Mastodon">
 				</a>
 				<a href="https://twitter.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/twitter_logo.svg" width="32" height="32" alt="Twitter">
@@ -451,33 +1063,30 @@
 			hljs.highlightBlock(block);
 		});
 
-		document.querySelectorAll('.content-article img').forEach((articleImg) => {
-			// Add lightbox elements in blog articles for Tobii.
-			const lightbox = document.createElement('a');
-			lightbox.href = articleImg.src;
-			lightbox.classList.add('lightbox');
-			lightbox.dataset.group = 'article';
-			articleImg.parentNode.appendChild(lightbox);
-			lightbox.appendChild(articleImg);
-		});
-
 		// Initialize lightbox.
 		new Tobii({
 			zoom: false,
 		});
-	});
 
-	// Update any download link to point to identified user's OS.
-	const links = document.querySelectorAll('.set-os-download-url');
-	for (let i = 0; i < links.length; i++) {
-		const link = links[i];
-		link.href = "/download/windows";
-		if (navigator.platform.indexOf('Mac') !== -1) {
-			link.href = "/download/macos";
-		} else if (navigator.platform.indexOf('Linux') !== -1) {
-			link.href = "/download/linux";
+		// Update any download link to point to identified user's OS.
+		const links = document.querySelectorAll('.set-os-download-url');
+		for (let i = 0; i < links.length; i++) {
+			const link = links[i];
+			let link_slug = 'download';
+			if ('version' in link.dataset && link.dataset['version'] === '3') {
+				link_slug = 'download/3.x';
+			}
+
+			let link_platform = 'windows';
+			if (navigator.platform.indexOf('Mac') !== -1) {
+				link_platform = 'macos';
+			} else if (navigator.platform.indexOf('Linux') !== -1) {
+				link_platform = 'linux';
+			}
+
+			link.href = `/${link_slug}/${link_platform}`;
 		}
-	}
+	});
 </script>
 
 

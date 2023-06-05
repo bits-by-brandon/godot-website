@@ -8,7 +8,7 @@
 	<meta name="description" content="Free and open source 2D and 3D game engine">
 	<meta name="theme-color" content="#3d8fcc">
 	<meta property="og:site_name" content="Godot Engine">
-	<meta property="og:url" content="https://godotengine.org">
+	<meta property="og:url" content="https://godotengine.org/blog/progress-report/3/">
 	<meta name="twitter:site" content="@godotengine">
 
 	<meta property="og:title" content="Blog - Progress Report - Page 3">
@@ -21,7 +21,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css?106">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -38,15 +38,15 @@
 				<img class="nav-logo dark-logo" src="/assets/logo_dark.svg" width="136" height="48" alt="Godot Engine">
 			</a>
 			<label for="nav_toggle_cb" id="nav_toggle_btn">
-				<img src="/assets/hamburger.svg" width="24" height="24" alt="">
+				<img src="/assets/icons/hamburger.svg" width="24" height="24" alt="Main menu">
 			</label>
 		</div>
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/showcase">Showcase</a></li>
+				<li><a href="/features">Features</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/features">Features</a></li>
+					<li><a href="/showcase">Showcase</a></li>
 				</div>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/community">Community</a></li>
@@ -86,31 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-
-	<h3 style="margin-top: 1rem; margin-bottom: 4rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default ">All</div>
 		</a>
@@ -196,12 +232,105 @@
 	</div>
 	<div class="posts">
 		
+		<a href="/article/gdscript-progress-report-typed-instructions/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f9/17e/9ec/5f917e9ecf2a2049515486.png');" href="/article/gdscript-progress-report-typed-instructions/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="George Marques" loading="lazy">
+						
+						<span class="by">George Marques </span>
+						<span class="date">&nbsp;-&nbsp;22 October 2020</span>
+					</div>
+					<h3>GDScript progress report: Typed instructions</h3>
+					<p class="excerpt">GDScript now has specific instructions for typed code, allowing a faster execution when types are known at compile time. This is the beginning of optimization in GDScript and the article shows a few details on how it was done and why it's faster.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/x11-display-server-progress-report/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f8/d66/bae/5f8d66bae9125677247883.png');" href="/article/x11-display-server-progress-report/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="Camille Mohr-Daurat" loading="lazy">
+						
+						<span class="by">Camille Mohr-Daurat </span>
+						<span class="date">&nbsp;-&nbsp;20 October 2020</span>
+					</div>
+					<h3>X11 display server progress report</h3>
+					<p class="excerpt">Progress report on the changes made in the X11 display server, the window management system for Godot 4 on Linux.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/complex-text-layouts-progress-report-1/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f8/6ec/9d7/5f86ec9d7d0fd694122636.png');" href="/article/complex-text-layouts-progress-report-1/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="Pāvels Nadtočajevs" loading="lazy">
+						
+						<span class="by">Pāvels Nadtočajevs </span>
+						<span class="date">&nbsp;-&nbsp;14 October 2020</span>
+					</div>
+					<h3>Complex text layouts progress report #1</h3>
+					<p class="excerpt">Report on the complex text layouts support implementation progress, part one: TextServer interface implementation details.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/improvements-gpuparticles-godot-40/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f7/f4a/c24/5f7f4ac242e0b845845549.png');" href="/article/improvements-gpuparticles-godot-40/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
+						<span class="by">Juan Linietsky </span>
+						<span class="date">&nbsp;-&nbsp; 8 October 2020</span>
+					</div>
+					<h3>New improvements for GPUParticles in Godot 4.0</h3>
+					<p class="excerpt">The turn of porting the GPU particle system to Godot 4.0 has arrived. This was the final feature that had to be ported over. Like all the rest of the features ported, it managed to get massive improvements.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/godot-web-progress-report-2/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f4/8d5/175/5f48d51759192009283012.png');" href="/article/godot-web-progress-report-2/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="Fabio Alessandrelli" loading="lazy">
+						
+						<span class="by">Fabio Alessandrelli </span>
+						<span class="date">&nbsp;-&nbsp;28 August 2020</span>
+					</div>
+					<h3>Godot web export progress report #2</h3>
+					<p class="excerpt">Godot is getting better export for the Web. While web technologies are not always suited to provide bleeding edge experiences, we do our best to let you exported game run as smoothly as possible on every platform.</p>
+				</div>
+			</article>
+		</a>
+		
 		<a href="/article/gdscript-progress-report-new-gdscript-now-merged/" style="text-decoration: none">
 			<article class="article-card">
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f2/966/b6d/5f2966b6dca1a217164497.png');" href="/article/gdscript-progress-report-new-gdscript-now-merged/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="George Marques" loading="lazy">
+						
 						<span class="by">George Marques </span>
 						<span class="date">&nbsp;-&nbsp; 4 August 2020</span>
 					</div>
@@ -216,7 +345,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f2/1bb/011/5f21bb0114081243850484.png');" href="/article/gsoc-2020-progress-report-1/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;29 July 2020</span>
 					</div>
@@ -231,7 +363,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f0/390/8aa/5f03908aa71d6900240172.png');" href="/article/gdscript-progress-report-type-checking-back/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="George Marques" loading="lazy">
+						
 						<span class="by">George Marques </span>
 						<span class="date">&nbsp;-&nbsp; 6 July 2020</span>
 					</div>
@@ -246,7 +381,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ef/e2d/10d/5efe2d10d53f8199324952.png');" href="/article/csharp-vs-and-vscode/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/ignacio.png" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/ignacio.png" alt="Ignacio Roldán Etcheverry" loading="lazy">
+						
 						<span class="by">Ignacio Roldán Etcheverry </span>
 						<span class="date">&nbsp;-&nbsp; 3 July 2020</span>
 					</div>
@@ -261,7 +399,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ef/899/c76/5ef899c76e7ce588705275.jpeg');" href="/article/godot-40-gets-sdf-based-real-time-global-illumination/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;28 June 2020</span>
 					</div>
@@ -276,7 +417,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ee/105/a49/5ee105a49ffe5297659537.png');" href="/article/godot-core-budget-meeting-report-1/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;11 June 2020</span>
 					</div>
@@ -291,7 +435,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ed/43c/e24/5ed43ce245f10218039510.png');" href="/article/gdscript-progress-report-writing-new-parser/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="George Marques" loading="lazy">
+						
 						<span class="by">George Marques </span>
 						<span class="date">&nbsp;-&nbsp; 1 June 2020</span>
 					</div>
@@ -306,7 +453,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5eb/70d/c27/5eb70dc27e632736391193.png');" href="/article/godot-40-will-get-new-modernized-lightmapper/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 9 May 2020</span>
 					</div>
@@ -321,7 +471,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5eb/018/a65/5eb018a659a8f843228718.png');" href="/article/gdscript-progress-report-writing-tokenizer/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="George Marques" loading="lazy">
+						
 						<span class="by">George Marques </span>
 						<span class="date">&nbsp;-&nbsp; 4 May 2020</span>
 					</div>
@@ -336,7 +489,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ea/ca9/b28/5eaca9b28e21f592433351.jpeg');" href="/article/vulkan-progress-report-7/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 1 May 2020</span>
 					</div>
@@ -351,7 +507,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e9/927/545/5e9927545d809505894099.png');" href="/article/godot-40-gets-global-and-instance-shader-uniforms/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;17 April 2020</span>
 					</div>
@@ -366,7 +525,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e8/e58/0c6/5e8e580c63d1e981395802.png');" href="/article/gles2-renderer-optimization-2d-batching/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="Bartleby Lawnjelly" loading="lazy">
+						
 						<span class="by">Bartleby Lawnjelly </span>
 						<span class="date">&nbsp;-&nbsp; 9 April 2020</span>
 					</div>
@@ -381,7 +543,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e8/92c/7b8/5e892c7b82886061410800.png');" href="/article/csharp-ios-signals-events/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/ignacio.png" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/ignacio.png" alt="Ignacio Roldán Etcheverry" loading="lazy">
+						
 						<span class="by">Ignacio Roldán Etcheverry </span>
 						<span class="date">&nbsp;-&nbsp; 6 April 2020</span>
 					</div>
@@ -396,7 +561,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e7/f74/307/5e7f74307ce34896455561.jpeg');" href="/article/core-refactoring-progress-report-2/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;28 March 2020</span>
 					</div>
@@ -411,7 +579,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e7/7f2/a75/5e77f2a75cf79778591830.png');" href="/article/custom-sky-shaders-godot-4-0/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/clayjohn.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/clayjohn.jpg" alt="Clay John" loading="lazy">
+						
 						<span class="by">Clay John </span>
 						<span class="date">&nbsp;-&nbsp;23 March 2020</span>
 					</div>
@@ -426,7 +597,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e5/a98/38e/5e5a9838e6a8b964298813.png');" href="/article/core-refactoring-progress-report-1/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;29 February 2020</span>
 					</div>
@@ -441,7 +615,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e5/166/6a0/5e51666a0d8b2890019310.png');" href="/article/enet-dtls-encryption/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="Fabio Alessandrelli" loading="lazy">
+						
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp;25 February 2020</span>
 					</div>
@@ -456,7 +633,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e4/941/218/5e494121885db845075999.png');" href="/article/navigation-server-godot-4-0/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="Andrea Catania" loading="lazy">
+						
 						<span class="by">Andrea Catania </span>
 						<span class="date">&nbsp;-&nbsp;19 February 2020</span>
 					</div>
@@ -471,87 +651,15 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e3/0ae/e1a/5e30aee1a2a5a347843703.png');" href="/article/vulkan-progress-report-6/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;28 January 2020</span>
 					</div>
 					<h3>Vulkan progress report #6</h3>
 					<p class="excerpt">It's been a while since the previous progress report, as I went on Vacation in November (did not take a vacation in years..), and December I had a lot of other engine related tasks that piled up that I had to solve. Work on Vulkan branch resumed at the beginning of January and significant progress was made already.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/html5-export-profiling/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e0/78b/00a/5e078b00a7171714583829.png');" href="/article/html5-export-profiling/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
-						<span class="by">Fabio Alessandrelli </span>
-						<span class="date">&nbsp;-&nbsp;28 December 2019</span>
-					</div>
-					<h3>HTML5 export profiling for Godot 4.0</h3>
-					<p class="excerpt">HTML5 debug export profiling is coming for Godot 4.0</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/godot-oculus-quest-support/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5e0/038/931/5e00389316ad1115387831.png');" href="/article/godot-oculus-quest-support/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/bastiaan.jpg" alt="" loading="lazy">
-						<span class="by">Bastiaan Olij </span>
-						<span class="date">&nbsp;-&nbsp;23 December 2019</span>
-					</div>
-					<h3>Godot Oculus Quest support</h3>
-					<p class="excerpt">Godot works on the Oculus Quest, find out more about getting up and running if you want to play around with it early.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/websocket-ssl-testing-html5-export/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5de/044/c15/5de044c1559cf429683529.png');" href="/article/websocket-ssl-testing-html5-export/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
-						<span class="by">Fabio Alessandrelli </span>
-						<span class="date">&nbsp;-&nbsp;28 November 2019</span>
-					</div>
-					<h3>WebSocket SSL server, HTTP server for testing HTML5 builds</h3>
-					<p class="excerpt">More networking improvements are coming in 3.2. WebSocketServer now has SSL support, and users can now test HTML5 export from the editor with one click.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/csharp-wasm-aot/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5dc/e01/229/5dce01229c795712716182.png');" href="/article/csharp-wasm-aot/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/ignacio.png" alt="" loading="lazy">
-						<span class="by">Ignacio Roldán Etcheverry </span>
-						<span class="date">&nbsp;-&nbsp;15 November 2019</span>
-					</div>
-					<h3>C# progress report: WebAssembly, MonoDevelop and AOT</h3>
-					<p class="excerpt">Godot 3.2 brings WebAssembly support for C# games. There is also a new extension for Visual Studio for Mac and MonoDevelop and preliminary support for AOT compilation.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/major-update-visual-shaders-godot-3-2-part-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5dc/1aa/e06/5dc1aae06d7f4636917764.png');" href="/article/major-update-visual-shaders-godot-3-2-part-2/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
-						<span class="by">Yuri Roubinsky </span>
-						<span class="date">&nbsp;-&nbsp;11 November 2019</span>
-					</div>
-					<h3>Major update for Visual Shaders in Godot 3.2 (part 2)</h3>
-					<p class="excerpt">This is the second blog post describing enhancements for visual shaders and shader scripts landed in Godot 3.2. Much time and effort was spent adding a lot of new things to enhance the overall experience developing shaders.</p>
 				</div>
 			</article>
 		</a>
@@ -593,7 +701,7 @@
 </main>
 
 <footer>
-	<div class="container flex">
+	<div class="container flex footer-container">
 		<div id="copyright">
 			<p>
 				© 2007-2023 Juan Linietsky, Ariel Manzur and <a
@@ -640,9 +748,12 @@
 		</div>
 		<div id="social" class="dark-desaturate">
 			<h4 class="text-right"><a href="/contact">Contact us</a></h4>
-			<div class="flex justify-space-between">
+			<div class="flex justify-space-between" style="gap: 3px;">
 				<a href="https://github.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/github_logo.svg" width="32" height="32" alt="GitHub">
+				</a>
+				<a href="https://mastodon.gamedev.place/@godotengine" target="_blank" rel="noopener">
+					<img src="/assets/footer/mastodon_logo.svg" width="32" height="32" alt="Mastodon">
 				</a>
 				<a href="https://twitter.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/twitter_logo.svg" width="32" height="32" alt="Twitter">
@@ -674,33 +785,30 @@
 			hljs.highlightBlock(block);
 		});
 
-		document.querySelectorAll('.content-article img').forEach((articleImg) => {
-			// Add lightbox elements in blog articles for Tobii.
-			const lightbox = document.createElement('a');
-			lightbox.href = articleImg.src;
-			lightbox.classList.add('lightbox');
-			lightbox.dataset.group = 'article';
-			articleImg.parentNode.appendChild(lightbox);
-			lightbox.appendChild(articleImg);
-		});
-
 		// Initialize lightbox.
 		new Tobii({
 			zoom: false,
 		});
-	});
 
-	// Update any download link to point to identified user's OS.
-	const links = document.querySelectorAll('.set-os-download-url');
-	for (let i = 0; i < links.length; i++) {
-		const link = links[i];
-		link.href = "/download/windows";
-		if (navigator.platform.indexOf('Mac') !== -1) {
-			link.href = "/download/macos";
-		} else if (navigator.platform.indexOf('Linux') !== -1) {
-			link.href = "/download/linux";
+		// Update any download link to point to identified user's OS.
+		const links = document.querySelectorAll('.set-os-download-url');
+		for (let i = 0; i < links.length; i++) {
+			const link = links[i];
+			let link_slug = 'download';
+			if ('version' in link.dataset && link.dataset['version'] === '3') {
+				link_slug = 'download/3.x';
+			}
+
+			let link_platform = 'windows';
+			if (navigator.platform.indexOf('Mac') !== -1) {
+				link_platform = 'macos';
+			} else if (navigator.platform.indexOf('Linux') !== -1) {
+				link_platform = 'linux';
+			}
+
+			link.href = `/${link_slug}/${link_platform}`;
 		}
-	}
+	});
 </script>
 
 

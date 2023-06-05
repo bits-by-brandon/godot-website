@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light dark;
+
   --transparent-cover: rgb(51, 63, 103, 0.4);
   --transparent-cover-darker: rgba(51, 63, 103, 0.9);
 
@@ -6,7 +8,7 @@
   --base-color-text: #4a5365;
   --base-color-text-hl: #454b59;
   --base-color-text-title: #546b99;
-  --base-color-text-subtitle: #8a9cc2;
+  --base-color-text-subtitle: #778ab3;
   --base-color-text-subtitle-date: #9aacd2;
 
   --dark-color: #333f67;
@@ -18,6 +20,7 @@
   --primary-color-text: #d4edff;
   --primary-color-text-hl: white;
   --primary-color-text-title: white;
+  --primary-color-subdued: #1f3c5e;
   --accent-color: #f57389;
 
   --secondary-color-text: #546b99;
@@ -30,6 +33,9 @@
   --footer-link-underline-color: rgba(200, 210, 250, 0.3);
   --tab-active-color: var(--primary-color);
 
+  --big-button-color: #478cbf;
+  --patreon-color: #e64850;
+
   --fund-color: #ef6767;
   --fund-color-hl: #e53e3e;
 
@@ -41,8 +47,13 @@
   --card-background-color: #ffffff;
   --card-footer-color: #eeeeee;
   --button-background-color: #ffffff;
+  --button-card-background-color: #d7dee6;
   --footer-color: rgb(175, 180, 220);
   --footer-background-color: #414d69;
+  --pagination-active-color: #284786;
+  --placeholder-text-color: #7a87a2;
+
+  --hero-text-background-color: #1a1a1a7a;
 
   --code-background-color: #dcdfe2;
   --codeblock-background-color: #282b2e;
@@ -53,15 +64,26 @@
   --sponsor-gold-background-color: #e0dfd4;
   --sponsor-silver-background-color: #e3e3e3;
 
+  --download-hero-color: hsla(0, 0%, 100%, 0.9);
+  --download-main-details-color: #f1f1f1;
+  --download-table-color: rgba(160, 160, 160, 0.05);
+  --platform-note-background-color: rgb(48 86 210 / 9%);
   --platform-code-background-color: #e5ebf1;
 
-  --digital-store-background-color: #2d4c74;
+  --feature-heading-color: #2d76ad;
+  --feature-note-color: #e53e3e;
 
   --teams-odd-color: rgba(160, 160, 160, 0.15);
   --teams-even-color: rgba(160, 160, 160, 0.05);
   --teams-subteams-color: rgba(255, 255, 255, 0.4);
 
   --table-divider-color: rgba(0, 0, 0, 0.1);
+
+  --warning-background-color: #ffedcc;
+  --warning-color: #404040;
+
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --header-font-family: "Montserrat", sans-serif;
 }
 
 .nav-logo.dark-logo {
@@ -89,6 +111,7 @@
     --primary-color-text: #d4edff;
     --primary-color-text-hl: white;
     --primary-color-text-title: white;
+    --primary-color-subdued: #1f3c5e;
     --accent-color: #5b5491;
 
     --secondary-color-text: #a6a6a6;
@@ -101,6 +124,9 @@
     --footer-link-underline-color: hsla(0, 0%, 100%, 0.25);
     --tab-active-color: white;
 
+    --big-button-color: #478cbf;
+    --patreon-color: #e64850;
+
     --fund-color: #ef6767;
     --fund-color-hl: #e53e3e;
 
@@ -112,8 +138,11 @@
     --card-background-color: #333639;
     --card-footer-color: #505356;
     --button-background-color: #333639;
+    --button-card-background-color: #55595e;
     --footer-color: hsla(0, 0%, 100%, 0.625);
     --footer-background-color: #333639;
+    --pagination-active-color: #4080ff;
+    --placeholder-text-color: #a6a6a6;
 
     --code-background-color: #333639;
     --codeblock-background-color: #333639;
@@ -123,15 +152,23 @@
     --sponsor-platinum-background-color: #e2ebfa;
     --sponsor-gold-background-color: #efece2;
 
+    --download-hero-color: hsla(0, 0%, 100%, 0.9);
+    --download-main-details-color: #f1f1f1;
+    --download-table-color: rgba(0, 0, 0, 0.2);
+    --platform-note-background-color: rgb(255 255 255 / 9%);
     --platform-code-background-color: #282b2e;
 
-    --digital-store-background-color: #2d4c74;
+    --feature-heading-color: #57b3f8;
+    --feature-note-color: #ef6767;
 
     --teams-odd-color: rgba(120, 120, 120, 0.15);
     --teams-even-color: rgba(120, 120, 120, 0.05);
     --teams-subteams-color: rgba(0, 0, 0, 0.2);
 
     --table-divider-color: rgba(255, 255, 255, 0.1);
+
+    --warning-background-color: #444033;
+    --warning-color: #ffeeaf;
   }
 
   /* Use logo with white text for dark navbar. */
@@ -191,8 +228,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--default-font-family);
   font-size: 18px;
 
   background-color: var(--base-color);
@@ -242,7 +278,7 @@ nav a,
 .btn,
 a.btn,
 .title-font {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--header-font-family);
   font-weight: 800;
   color: var(--base-color-text-title);
   margin-top: 0px;
@@ -503,37 +539,36 @@ footer {
   padding-bottom: 32px;
 }
 
-footer ul {
-  list-style: none;
-  margin: 0px;
-  float: left;
-  overflow-wrap: break-word;
-  margin-left: 32px;
-  padding-left: 0px;
-}
-
 footer a {
   color: var(--footer-link-color);
   text-decoration-color: var(--footer-link-underline-color);
 }
+
 #copyright {
   flex: 2;
 }
 #copyright > p:first-child {
   margin-top: 0;
 }
-#sitemap {
-  flex: 3;
 
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+#sitemap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+	gap: 24px;
+	margin-left: 16px;
 }
-#sitemap li {
+#sitemap .sitemap-group {
+  float: left;
+  list-style: none;
+  margin: 0px;
+  overflow-wrap: break-word;
+  padding-left: 0px;
+}
+#sitemap .sitemap-group li {
   line-height: 20px;
   margin-bottom: 10px;
 }
-#sitemap strong {
+#sitemap .sitemap-group strong {
   color: var(--footer-link-color);
 }
 #social {
@@ -568,7 +603,7 @@ footer a {
 }
 
 .pagination a.active {
-  background-color: hsl(220, 100%, 62.5%);
+  background-color: var(--pagination-active-color);
   color: white;
 }
 
@@ -710,8 +745,15 @@ p.small {
 .btn.btn-flat.btn-flat-white {
   color: hsla(0, 0%, 100%, 0.95);
 }
+.btn.btn-flat.btn-flat-frosted {
+  background-color: rgb(111 111 111 / 27%);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
 
 .btn.btn-download {
+  display: flex;
+  flex-wrap: nowrap;
   background-color: white;
   padding: 0px;
   text-align: center;
@@ -720,12 +762,14 @@ p.small {
   color: var(--dark-color);
   display: inline-block;
   padding: 16px 32px 16px 32px;
+  flex-grow: 1;
 }
 .btn.btn-download > .download-hint {
   background-color: var(--primary-color);
   color: var(--primary-color-text-title);
   display: inline-block;
   padding: 16px 16px 16px 16px;
+  min-width: 48px;
 }
 
 .date-big {
@@ -736,23 +780,6 @@ p.small {
   font-size: 14px;
   font-weight: bold;
   color: #8f9db9;
-}
-
-.author {
-  color: var(--base-color-text-subtitle);
-  text-transform: none;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.author .date {
-  color: var(--base-color-text-subtitle-date);
-  padding-left: 24px;
-}
-
-.tags {
-  margin-top: -3rem;
-  margin-bottom: 3rem;
 }
 
 .tags > a {
@@ -766,7 +793,7 @@ p.small {
   border-radius: 1000px;
   box-shadow: var(--base-shadow);
   filter: saturate(0.35);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--header-font-family);
   font-size: 16px;
   padding: 0.25rem 0.75rem;
   margin: 0.1rem;
@@ -790,6 +817,14 @@ p.small {
 
 .card .footer {
   background-color: var(--card-footer-color);
+}
+
+.card-warning {
+  background: var(--warning-background-color);
+  border-radius: 4px 4px;
+  color: var(--warning-color);
+  font-size: 90%;
+  padding: 0 12px;
 }
 
 a.card {
@@ -879,7 +914,7 @@ pre > code {
   margin: 0px !important;
 }
 
-#sfc_graphic {
+#foundation_graphic {
   width: 400px;
 }
 
@@ -887,9 +922,10 @@ pre > code {
   display: flex;
   height: 40px;
   margin-bottom: 2rem;
-  box-shadow: var(--base-shadow);
-  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 18px;
   overflow: hidden;
+  min-width: 65%;
 }
 .search-bar input {
   flex-grow: 1;
@@ -898,8 +934,11 @@ pre > code {
   font-size: 18px;
   border: none;
   border-right: 1px solid var(--transparent-cover);
-  background-color: var(--card-background-color);
+  background-color: var(--card-footer-color);
   color: var(--base-color-text);
+}
+.search-bar input::placeholder {
+  color: var(--placeholder-text-color);
 }
 .search-bar .search-bar-btn {
   cursor: pointer;
@@ -907,8 +946,7 @@ pre > code {
   width: 3rem;
   padding: 0;
   margin: 0;
-  /* background-color: hsl(220, 100%, 62.5%); */
-  background-color: var(--primary-color);
+  background-color: var(--pagination-active-color);
   color: var(--primary-color-text-title);
 }
 .search-bar .search-bar-btn img {
@@ -1018,6 +1056,28 @@ pre > code {
   }
 }
 
+@media (max-width: 1020px) {
+  footer {
+    text-align: center;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+
+  #social {
+    margin: auto;
+    width: 30%;
+    min-width: 250px;
+    margin-top: 32px;
+  }
+  #social h4 {
+    text-align: center;
+  }
+  #social > div {
+    justify-content: space-around;
+  }
+}
+
 @media (max-width: 900px) {
   a.patreonLink,
   a.patreonLink > .patreon {
@@ -1068,47 +1128,24 @@ pre > code {
     display: none;
   }
 
-  footer {
-    text-align: center;
-  }
-  #sitemap {
-    flex-direction: column;
-    align-items: center;
-
-    margin-left: 0;
-  }
-  #sitemap .sitemap-group {
-    margin-top: 32px;
-    margin-left: 0;
-  }
-  #social {
-    margin: auto;
-    width: 30%;
-    min-width: 250px;
-    margin-top: 32px;
-  }
-  #social h4 {
-    text-align: center;
-  }
-  #social > div {
-    justify-content: space-around;
-  }
-
   .tabs {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
     justify-content: normal;
   }
-
-  .author .date {
-    display: block;
-    margin-top: 0.25rem;
-    padding-left: 0;
-  }
 }
+
+@media (max-width: 720px) {
+	#sitemap {
+		grid-template-columns: 1fr;
+		gap: 12px;
+		margin-left: 0;
+	}
+}
+
 @media (max-width: 500px) {
-  #sfc_graphic {
+  #foundation_graphic {
     width: 100%;
   }
 }
@@ -1249,12 +1286,12 @@ section.hero .wrapper {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 220px 0px 120px;
+  padding: 200px 20px 120px;
 }
 
 @media (max-width: 650px) {
   section.hero .wrapper {
-    padding: 150px 0px 120px;
+    padding: 150px 10px 120px;
   }
 }
 
@@ -1262,7 +1299,7 @@ section.hero .credits {
   position: absolute;
   bottom: 14px;
   right: 30px;
-  background: #1a1a1a7a;
+  background: var(--hero-text-background-color);
   border-radius: 8px;
   padding: 2px 10px;
   opacity: 0.6;

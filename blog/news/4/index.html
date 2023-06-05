@@ -8,7 +8,7 @@
 	<meta name="description" content="Free and open source 2D and 3D game engine">
 	<meta name="theme-color" content="#3d8fcc">
 	<meta property="og:site_name" content="Godot Engine">
-	<meta property="og:url" content="https://godotengine.org">
+	<meta property="og:url" content="https://godotengine.org/blog/news/4/">
 	<meta name="twitter:site" content="@godotengine">
 
 	<meta property="og:title" content="Blog - News - Page 4">
@@ -21,7 +21,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css?106">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -38,15 +38,15 @@
 				<img class="nav-logo dark-logo" src="/assets/logo_dark.svg" width="136" height="48" alt="Godot Engine">
 			</a>
 			<label for="nav_toggle_cb" id="nav_toggle_btn">
-				<img src="/assets/hamburger.svg" width="24" height="24" alt="">
+				<img src="/assets/icons/hamburger.svg" width="24" height="24" alt="Main menu">
 			</label>
 		</div>
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/showcase">Showcase</a></li>
+				<li><a href="/features">Features</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/features">Features</a></li>
+					<li><a href="/showcase">Showcase</a></li>
 				</div>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/community">Community</a></li>
@@ -86,31 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-
-	<h3 style="margin-top: 1rem; margin-bottom: 4rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default ">All</div>
 		</a>
@@ -196,12 +232,53 @@
 	</div>
 	<div class="posts">
 		
+		<a href="/article/next-patreon-goal-help-us-hire-remi-verschelde-akien-full-time/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a5/3cd/031/5a53cd031c23c749175648.png');" href="/article/next-patreon-goal-help-us-hire-remi-verschelde-akien-full-time/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
+						<span class="by">Juan Linietsky </span>
+						<span class="date">&nbsp;-&nbsp; 8 January 2018</span>
+					</div>
+					<h3>Next Patreon goal: Help us hire Rémi Verschelde (Akien) full time!</h3>
+					<p class="excerpt">So far we have been a few months on Patreon and the net result has been overwhelmingly positive, as we get enough funds each month to hire our lead developer and an intern! Still, it's time to start thinking about our next hire to continue speeding up Godot's development as well as its visibility and relevance in the gamedev industry.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/let-people-touch-godot/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a2/c53/7eb/5a2c537ebba45114446322.jpg');" href="/article/let-people-touch-godot/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/pedro.png" alt="Pedro J. Estébanez" loading="lazy">
+						
+						<span class="by">Pedro J. Estébanez </span>
+						<span class="date">&nbsp;-&nbsp; 9 December 2017</span>
+					</div>
+					<h3>Let people touch Godot!</h3>
+					<p class="excerpt">Maybe you have already seen an AdPod around. They are three-sided giant multitouch capable screens. The company behind them customizes them for very important customers for promotion campaings for things like movies (Disney, Universal).
+They "skin" the device cosmetically for the targeted product and develop interactive apps that run on them. People walking by can interact with them, something which creates great product awareness and also entertains.
+Now they have decided to use Godot for such development work! The switch from the well-known non-free engine they were using formerly has been a wise decision.</p>
+				</div>
+			</article>
+		</a>
+		
 		<a href="/article/hero-wanted-campaing-fixing-final-bugs-launchs/" style="text-decoration: none">
 			<article class="article-card">
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a2/806/8a7/5a28068a7039e549952344.png');" href="/article/hero-wanted-campaing-fixing-final-bugs-launchs/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 6 December 2017</span>
 					</div>
@@ -216,7 +293,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a2/422/3b0/5a24223b08a3b535873636.png');" href="/article/shedding-light-on-godot-development-process/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 3 December 2017</span>
 					</div>
@@ -231,7 +311,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a1/8a8/a92/5a18a8a92779a993178386.png');" href="/article/enjin-coin-supports-godot-and-announces-upcoming-module/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;24 November 2017</span>
 					</div>
@@ -246,7 +329,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a1/5de/ee5/5a15deee52d15217381472.png');" href="/article/please-help-us-reach-our-second-patreon-goal/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;22 November 2017</span>
 					</div>
@@ -261,7 +347,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a1/578/034/5a1578034db00415708461.png');" href="/article/help-complete-translations-godot-3-0/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;22 November 2017</span>
 					</div>
@@ -276,7 +365,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a0/1cb/4ce/5a01cb4ce7921429806565.png');" href="/article/hero-wanted-help-fix-remaining-issues-30/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 7 November 2017</span>
 					</div>
@@ -291,7 +383,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/59e/119/c08/59e119c088aec337308530.png');" href="/article/as-oss-godot-is-more-than-a-game-engine/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;13 October 2017</span>
 					</div>
@@ -306,7 +401,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/59b/efc/4aa/59befc4aa50f7635149686.png');" href="/article/patreon-first-goal-achieved/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;18 September 2017</span>
 					</div>
@@ -321,7 +419,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/59a/873/435/59a87343562c8216231867.png');" href="/article/we-need-your-help-improve-our-documentation-system/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;31 August 2017</span>
 					</div>
@@ -336,7 +437,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/59a/1fe/5c5/59a1fe5c53457648503006.jpg');" href="/article/80-funded-celebrating-patreon-rewards-upgrade/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;26 August 2017</span>
 					</div>
@@ -351,7 +455,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/599/f48/cc5/599f48cc5fc6e217155476.jpg');" href="/article/small-defense-gltf/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;24 August 2017</span>
 					</div>
@@ -366,7 +473,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/598/fb6/1bb/598fb61bb576f136583931.png');" href="/article/how-actually-make-your-dream-game/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp;11 August 2017</span>
 					</div>
@@ -381,7 +491,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/598/c4c/b22/598c4cb22c32c629530888.png');" href="/article/support-godot-patreon-lets-make-best-game-engine-ever-together/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 9 August 2017</span>
 					</div>
@@ -396,7 +509,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/598/3d8/bca/5983d8bcaa467213846247.png');" href="/article/we-should-all-use-gltf-20-export-3d-assets-game-engines/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 3 August 2017</span>
 					</div>
@@ -411,7 +527,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/596/62b/1c4/59662b1c4ffa8859295653.png');" href="/article/beta-release-python-support/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;12 July 2017</span>
 					</div>
@@ -426,7 +545,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/594/95a/1a5/59495a1a5ee9e468550721.jpg');" href="/article/make-2d-games-godot-last-day-kickstarter/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/nathan.png" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/nathan.png" alt="Nathan GDQuest" loading="lazy">
+						
 						<span class="by">Nathan GDQuest </span>
 						<span class="date">&nbsp;-&nbsp;20 June 2017</span>
 					</div>
@@ -441,7 +563,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/592/29d/1fe/59229d1fe233b092175821.jpg');" href="/article/2d-games-godot-kickstarter-live/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/nathan.png" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/nathan.png" alt="Nathan GDQuest" loading="lazy">
+						
 						<span class="by">Nathan GDQuest </span>
 						<span class="date">&nbsp;-&nbsp;22 May 2017</span>
 					</div>
@@ -456,7 +581,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/591/991/65f/59199165f24e2014770050.jpg');" href="/article/godot-course-kickstarter-next-monday/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;15 May 2017</span>
 					</div>
@@ -471,7 +599,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/58a/556/305/58a556305f702210654594.png');" href="/article/only-two-buttons-dozens-games/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;16 February 2017</span>
 					</div>
@@ -486,7 +617,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/586/ab0/894/586ab08946903852839807.png');" href="/article/warning-head-going-unstable/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
 						<span class="by">Juan Linietsky </span>
 						<span class="date">&nbsp;-&nbsp; 2 January 2017</span>
 					</div>
@@ -501,7 +635,10 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/581/7c8/856/5817c8856eccf877486140.png');" href="/article/asset-library-web-frontend-reaches-beta/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
 						<span class="by">Rémi Verschelde </span>
 						<span class="date">&nbsp;-&nbsp;31 October 2016</span>
 					</div>
@@ -516,42 +653,15 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/57e/f6c/a06/57ef6ca06ea2a421665008.png');" href="/article/our-point-click-framework-finally-out/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/punto.png" alt="" loading="lazy">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/punto.png" alt="Ariel Manzur" loading="lazy">
+						
 						<span class="by">Ariel Manzur </span>
 						<span class="date">&nbsp;-&nbsp; 1 October 2016</span>
 					</div>
 					<h3>Our point'n'click framework is finally out!</h3>
 					<p class="excerpt">The long-awaited framework to create point & click adventure games, initially promised during the Kickstarter for The Interactive Adventures of Dog Mendonça and Pizzaboy®, is finally available. It is of course open source, and comes with a great manual written by Ariel Manzur and the FLOSS Manuals FR team.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/godot-getting-more-languages/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/57a/b73/701/57ab73701f653339027447.jpg');" href="/article/godot-getting-more-languages/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="" loading="lazy">
-						<span class="by">Juan Linietsky </span>
-						<span class="date">&nbsp;-&nbsp;10 August 2016</span>
-					</div>
-					<h3>More programming languages in Godot, want to help?</h3>
-					<p class="excerpt">There is a common misundertanding in the industry about us, Godot devs, trying to reinvent the wheel because we like it. This could not be further away from the truth.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/help-us-complete-godots-api-reference/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/578/778/e37/578778e37372a436221460.png');" href="/article/help-us-complete-godots-api-reference/"></div>
-				<div class="content">
-					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="" loading="lazy">
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;14 July 2016</span>
-					</div>
-					<h3>Help us complete Godot's API reference!</h3>
-					<p class="excerpt">The class reference has seen a lot of work over the last 3 months, and could still use more hands to help document all the classes, methods, constants, member variables and signals for the complete Godot API! With a handful of contributors it's a huge job, but with the help of the community we can make it pretty fast!</p>
 				</div>
 			</article>
 		</a>
@@ -593,7 +703,7 @@
 </main>
 
 <footer>
-	<div class="container flex">
+	<div class="container flex footer-container">
 		<div id="copyright">
 			<p>
 				© 2007-2023 Juan Linietsky, Ariel Manzur and <a
@@ -640,9 +750,12 @@
 		</div>
 		<div id="social" class="dark-desaturate">
 			<h4 class="text-right"><a href="/contact">Contact us</a></h4>
-			<div class="flex justify-space-between">
+			<div class="flex justify-space-between" style="gap: 3px;">
 				<a href="https://github.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/github_logo.svg" width="32" height="32" alt="GitHub">
+				</a>
+				<a href="https://mastodon.gamedev.place/@godotengine" target="_blank" rel="noopener">
+					<img src="/assets/footer/mastodon_logo.svg" width="32" height="32" alt="Mastodon">
 				</a>
 				<a href="https://twitter.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/twitter_logo.svg" width="32" height="32" alt="Twitter">
@@ -674,33 +787,30 @@
 			hljs.highlightBlock(block);
 		});
 
-		document.querySelectorAll('.content-article img').forEach((articleImg) => {
-			// Add lightbox elements in blog articles for Tobii.
-			const lightbox = document.createElement('a');
-			lightbox.href = articleImg.src;
-			lightbox.classList.add('lightbox');
-			lightbox.dataset.group = 'article';
-			articleImg.parentNode.appendChild(lightbox);
-			lightbox.appendChild(articleImg);
-		});
-
 		// Initialize lightbox.
 		new Tobii({
 			zoom: false,
 		});
-	});
 
-	// Update any download link to point to identified user's OS.
-	const links = document.querySelectorAll('.set-os-download-url');
-	for (let i = 0; i < links.length; i++) {
-		const link = links[i];
-		link.href = "/download/windows";
-		if (navigator.platform.indexOf('Mac') !== -1) {
-			link.href = "/download/macos";
-		} else if (navigator.platform.indexOf('Linux') !== -1) {
-			link.href = "/download/linux";
+		// Update any download link to point to identified user's OS.
+		const links = document.querySelectorAll('.set-os-download-url');
+		for (let i = 0; i < links.length; i++) {
+			const link = links[i];
+			let link_slug = 'download';
+			if ('version' in link.dataset && link.dataset['version'] === '3') {
+				link_slug = 'download/3.x';
+			}
+
+			let link_platform = 'windows';
+			if (navigator.platform.indexOf('Mac') !== -1) {
+				link_platform = 'macos';
+			} else if (navigator.platform.indexOf('Linux') !== -1) {
+				link_platform = 'linux';
+			}
+
+			link.href = `/${link_slug}/${link_platform}`;
 		}
-	}
+	});
 </script>
 
 
